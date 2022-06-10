@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            margin:50px auto;
+        }
+        td{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+    <script>
+        var n = 1;
+        var tag = `<table>`;
+        for(i=0;i<5;i++){
+            tag += `<tr>`;
+                for(j=0;j<5;j++){
+                    tag += `<td>${n}</td>`;
+                    n++;
+                }
+            tag += `</tr>`;
+        }
+        tag += `</table>`;
+        document.write(tag);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
