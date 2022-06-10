@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+        }
+        .dan{
+            width: 150px;
+            padding:10px;
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+    <script>
+        //구구단 2단~9단까지 출력
+        var tag = `<div class="container">`;
+        for(dan=2;dan<10;dan++){
+            tag += `<div class="dan"><h2>${dan}단</h2>`;
+            for(i=1;i<10;i++){
+                tag += `<p>${dan} * ${i} = ${dan*i}</p>`;
+            }
+            tag += `</div>`;
+        }
+        tag += `</div>`;
+        document.write(tag);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
