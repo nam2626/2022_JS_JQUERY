@@ -16,6 +16,19 @@
     <script>
         //숫자 1~10까지 출력하는 반복문
         //숫자가 짝수면 글자색을 파랑색, 홀수면 글자색을 빨간색으로 숫자 출력
+        var i = 1;
+        while(i <= 10){
+            var tag = i % 2 == 0 ? "<p class='blue'>" + i + "</p>" : "<p class='red'>" + i + "</p>";
+            document.write(tag);
+            i++;
+        }
+        //백틱을 이용한 태그 조립
+        i = 1;
+        while(i <= 10){
+            var tag = i % 2 == 0 ? `<p class="blue">${i}</p>`: `<p class="red">${i}</p>`;
+            document.write(tag);
+            i++;
+        }
     </script>
 </head>
 <body>
