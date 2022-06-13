@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    <script>
+        var today = new Date();
+        today.setDate(0);
+        document.write(today.toLocaleString(),"<br>");
+        
+        //오늘 날짜에서 3일뒤 날짜를 계산해서 구하시오
+        today = new Date();
+        today.setDate(today.getDate()+3);
+        document.write(today.toLocaleString(),"<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

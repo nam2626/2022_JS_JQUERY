@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달력</title>
+    <script>
+        var today = new Date();
+        var tag = `<h2>${today.getMonth()+1}월</h2>`;
+        tag = `<table><tr><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr>`;
+        
+        //해당 월의 초일
+        var startDate = new Date(today.getFullYear(),today.getMonth(),1);
+        //해당 월의 말일
+        var endDate = new Date(today.getFullYear(),today.getMonth()+1,0);
+
+        //달력상으로 첫번째 날짜
+        startDate.setDate(startDate.getDate()-startDate.getDay());
+        //달력상으로 마지막 날짜
+        endDate.setDate(endDate.getDate()+ 6 - endDate.getDay());
+        console.log(startDate.toLocaleString(), endDate.toLocaleString());
+
+    </script>
+    <style>
+        table{
+            border-collapse: collapse;
+            margin:0 auto;
+        }
+        td,th{
+            width: 100px;
+            border:1px solid black;
+            padding: 10px;
+        }
+        td{
+            height: 100px;
+            text-align: right;
+            vertical-align: top;
+        }
+        td:nth-child(7n),th:nth-child(7n){
+            color:blue;
+        }
+        td:nth-child(7n+1),th:nth-child(7n+1){
+            color:red;
+        }
+        .disable{
+            color:gray !important;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
