@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if문</title>
+    <script>
+        // 점수 5개를 입력받아서, 입력한 점수들의 평균을 구하고
+        let avg = 0;
+        for(i=0;i<5;i++){
+            avg += Number(prompt('점수 입력하세요','0'));
+        }
+        avg /= 5;
+        //평균에 따른 성적 등급을 출력
+        if(avg >= 90){
+            document.write('성적 등급 : A');
+        }else if(avg >= 80){
+            document.write('성적 등급 : B');
+        }else if(avg >= 70){
+            document.write('성적 등급 : C');
+        }else if(avg >= 60){
+            document.write('성적 등급 : D');
+        }else{
+            document.write('성적 등급 : F');
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
