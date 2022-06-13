@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+    <script>
+        var str = "누구든지 체포 또는 구속을 당한 때에는 "+
+        "즉시 변호인의 조력을 받을 권리를 가진다. 다만, " +
+        "형사피고인이 스스로 변호인을 구할 수 없을 때에는" + 
+        "법률이 정하는 바에 의하여 국가가 변호인을 붙인다.";
+
+        //문자열에서 인덱스 위치에 해당하는 한글자를 뽑음
+        document.write(str.charAt(2),str.charAt(3),"<br>");
+
+        //문자열 검색 - 찾는 문자열이 없으면 -1을 리턴함
+        document.write(str.indexOf("변호인"),"<br>");//처음부터 검색
+        document.write(str.indexOf("변호인",38),"<br>");
+        document.write(str.indexOf("변호사"),"<br>");
+        document.write(str.lastIndexOf("변호인"),"<br>");//마지막부터 검색
+
+        //문자열 개수
+        document.write("문자열 개수 : ", str.length,"<br>");
+
+        //문자열 바꾸기 - 최초 검색된 것만 변경, 변경사항은 저장되지 않음
+        document.write(str.replace("변","신"),"<br>");
+        document.write(str,"<br>");
+        //문자열 바꾼 후 저장
+        // str = str.replace("변","신");
+        // document.write(str,"<br>");
+        
+        //문자열 전체 변경
+        str = str.replaceAll("변","신");
+        document.write(str,"<br>");
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
