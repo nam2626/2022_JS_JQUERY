@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch 문</title>
+    <script>
+        let no = Number(prompt('숫자 입력, 1-Goole, 2-Naver, 3-Daum','0'));
+        let url = 'https://';
+
+        switch(no){
+            case 1:
+                url += 'google.co.kr';
+                break;
+            case 2:
+                url += 'naver.com'
+                break;
+            case 3:
+                url += 'daum.net'
+                break;
+            default:
+                url += 'cyworld.com';
+        }
+        location.href = url;
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
