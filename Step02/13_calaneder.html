@@ -8,7 +8,7 @@
     <script>
         var today = new Date();
         var tag = `<h2>${today.getMonth()+1}월</h2>`;
-        tag = `<table><tr><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr>`;
+        tag += `<table><tr><th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th></tr>`;
         
         //해당 월의 초일
         var startDate = new Date(today.getFullYear(),today.getMonth(),1);
@@ -20,9 +20,25 @@
         //달력상으로 마지막 날짜
         endDate.setDate(endDate.getDate()+ 6 - endDate.getDay());
         console.log(startDate.toLocaleString(), endDate.toLocaleString());
-
+            
+        //달력 날짜 생성
+        var line = (endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 *7);
+        console.log(line);
+        for(i=0;i<line;i++){
+            tag += '<tr>';
+            for(j=0;j<7;j++){
+                tag += `<td>${startDate.getDate()}</td>`;
+                startDate.setDate(startDate.getDate()+1);
+            }
+            tag += '</tr>';
+        }
+        tag += '</table>';
+        document.write(tag);
     </script>
     <style>
+        h2{
+            text-align: center;
+        }
         table{
             border-collapse: collapse;
             margin:0 auto;
