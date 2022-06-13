@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+    <script>
+        //         01234567890
+        var str = "Hello World Test Korea Soccer Baseball";
+
+        //문자열 부분 추출
+        //4번 인덱스부터 10글자
+        document.write(str.substr(4,10),"<br>");
+        //4번 인덱스부터 10번 인덱스 전까지 추출
+        document.write(str.substring(4,10),"<br>");
+        //4번 인덱스부터 전부 추출
+        document.write(str.substr(4),"<br>");
+        document.write(str.substring(4),"<br>");
+
+        //대문자변환
+        document.write(str.toUpperCase(),"<br>");
+        //소문자변환
+        document.write(str.toLowerCase(),"<br>");
+
+        //문자 코드값
+        var str2='가';
+        document.write(str2.charCodeAt(0),"<br>");
+        document.write(String.fromCharCode(65),"<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
