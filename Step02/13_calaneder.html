@@ -27,7 +27,11 @@
         for(i=0;i<line;i++){
             tag += '<tr>';
             for(j=0;j<7;j++){
-                tag += `<td>${startDate.getDate()}</td>`;
+                //현재 월이 아니면 disable 클래스를 td에 적용
+                if(startDate.getMonth() == today.getMonth())
+                    tag += `<td>${startDate.getDate()}</td>`;
+                else
+                    tag += `<td class='disable'>${startDate.getDate()}</td>`;
                 startDate.setDate(startDate.getDate()+1);
             }
             tag += '</tr>';
