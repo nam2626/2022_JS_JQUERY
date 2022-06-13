@@ -5,11 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>if문</title>
+    <style>
+        .bold{
+            font-weight: bold;
+        }
+    </style>
     <script>
         /*
             1~100까지 숫자들을 출력
             단 5와 9의 배수를 출력할때는 글꼴을 두껍께 처리
         */
+       for(i=1;i<=100;i++){
+            var className='';
+            if(i % 5 == 0 || i % 9 == 0)
+                className='bold';
+            document.write(`<span class='${className}'>${i}</span> `);
+       }
     </script>
 </head>
 <body>
