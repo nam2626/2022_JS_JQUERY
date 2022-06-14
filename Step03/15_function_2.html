@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>undefined</title>
+    <script>
+        // function sum(a=0,b=0){
+        //     return a+b;
+        // }
+        function sum(a,b){
+            if(a == undefined)
+                a = 0;
+            if(b == undefined)
+                b = 0;
+            return a + b;
+        }
+        document.write(sum(),"<br>");
+        document.write(sum(10),"<br>");
+        document.write(sum(10,20),"<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
