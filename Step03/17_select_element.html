@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select element</title>
+    <script>
+        function search(){
+            // var txt = document.getElementById('txt');
+            var txt = document.querySelector('#txt');
+            alert('검색어 : '+txt.value);
+        }
+
+       
+    </script>
+</head>
+<body>
+    <input type="text" id="txt"><button onclick="search();">검색</button>
+    <hr>
+    <input type="text" name="t1" value="A"><br>
+    <input type="text" name="t2" value="B"><br>
+    <input type="text" name="t3" value="C"><br>
+    <input type="text" name="t4" value="D"><br>
+
+    <p>1</p>
+    <p>2</p>
+    <p><b>3</b></p>
+    <p>4</p>
+    <p>5</p>
+    <h1>제목 태그</h1>
+    <script>
+        // var p = document.getElementsByTagName('p');
+        var p = document.querySelectorAll('p');//여러개가 선택되었을때
+        console.log('선택된 p태그 개수 : ',p.length);
+        for(i=0;i<p.length;i++){
+            console.log(p[i].innerHTML);
+        }
+        //h1 선택
+        var h1 = document.querySelectorAll('h1');
+        console.log(h1);
+        h1[0].innerHTML = '수정된 <i>제목</i>태그';
+    </script>
+</body>
+</html>
