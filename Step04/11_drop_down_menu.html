@@ -13,7 +13,7 @@
         nav{
             width: 1200px;
             margin: 100px auto;
-            border:1px solid black;
+            /* border:1px solid black; */
             display: flex;
             flex-direction: column;
         }
@@ -22,7 +22,7 @@
         }
         #main_menu{
             width: 100%;
-            border:1px solid black;
+            /* border:1px solid black; */
             display: flex;
             flex-direction: row;
             box-sizing: border-box;
@@ -58,11 +58,32 @@
             display: flex;
             flex-direction: row;
             /* box-sizing: border-box; */
-            border:1px solid red;
+            /* border:1px solid red; */
             transition-property: all;
             transition-duration: 1s;
         }
     </style>
+    <script>
+        window.onload = function(){
+            var nav = document.querySelector('nav');
+            //테두리~패딩~콘텐츠 합한 세로길이
+            console.log(nav.offsetHeight);
+            //테두리 여백을 제외한 콘텐츠 길이(숨겨진 요소까지 포함)
+            console.log(nav.scrollHeight);
+            var sub_menu_container = document.querySelector('#sub_menu_container');
+            console.log(sub_menu_container.offsetHeight,sub_menu_container.scrollHeight);
+            var sub_menu_height = sub_menu_container.scrollHeight;
+            sub_menu_height += "px";
+            console.log(sub_menu_height);
+
+            nav.onmouseenter = () => {
+                sub_menu_container.style.height = sub_menu_height;
+            }
+            nav.onmouseleave = () => {
+                sub_menu_container.style.height = "0px";
+            }
+        }
+    </script>
 </head>
 <body>
     <nav>

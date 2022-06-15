@@ -1,0 +1,20 @@
+이벤트 : 웹에서 일어나는 상황(클릭, 키보드 자판을 눌렀을때.....)
+
+마우스
+    onclick : 마우스를 클릭 했을때
+    ondblclick : 더블 클릭 했을때
+    onmousedown : 마우스 버튼을 눌렀을때
+    onmouseup : 마우스 버튼을 눌렀다가 떼엇을때
+    onmousemove : 마우스 이동할때
+    onmouseover/onmouseenter : 마우스 포인터가 영역에 올라갔을때
+    onmouseout/onmouseleave : 마우스가 포인터가 영역에 벗어났을때
+
+키보드
+    onkeyup : 키보드 키를 눌렀다가 뗀 순간
+    onkeydown : 키보드 키를 누른 순간
+    onkeypress : 키보드 키를 누르고 있을때
+폼
+    onsubmit : submit 버튼을 눌러서 submit 발동되는 순간
+    onchange : input 태그의 값이 바뀌었을때
+    onfocus/onblur : 태그가 선택이 된 순간/선택이 해제된 순간
+기타
