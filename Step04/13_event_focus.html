@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <script>
+        window.onload = () => {
+            var txt = document.querySelector("#txt");
+            var a = document.querySelector("a");
+            txt.focus();//포커스 지정
+            txt.onfocus = a.onfocus = function(){
+                this.style.backgroundColor = "skyblue";
+            }
+            txt.onblur = a.onblur = function(){
+                this.style.background = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="txt">
+    <br>
+    <a href="#">링크</a>
+</body>
+</html>
