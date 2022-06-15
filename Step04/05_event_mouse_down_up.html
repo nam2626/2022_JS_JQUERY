@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <script>
+        //btn, content 태그 선택
+        window.onload = () => {
+            var btn = document.querySelector('#btn');
+            var content = document.querySelector('#content');
+            btn.onmousedown = (e) => {
+                content.innerHTML = e.button + " 누름";
+            }
+            btn.onmouseup = (e) => {
+                content.innerHTML = e.button + " 뗌";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <button id="btn">버튼</button>
+    <p id="content"></p>    
+</body>
+</html>
