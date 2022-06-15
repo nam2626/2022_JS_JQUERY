@@ -82,6 +82,13 @@
             nav.onmouseleave = () => {
                 sub_menu_container.style.height = "0px";
             }
+            //서브메뉴 항목을 클릭을 하면 서브메뉴 컨테이너를 접음
+            var sub_menu_li = document.querySelectorAll('#sub_menu_container a');
+            for(i=0;i<sub_menu_li.length;i++){
+                sub_menu_li[i].onclick = () => {
+                    sub_menu_container.style.height = "0px";
+                }
+            }
         }
     </script>
 </head>
