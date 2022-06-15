@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            var body = document.querySelector('body');
+            body.onmousemove = (e) =>{
+                console.log(e.clientX + " " + e.clientY);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
