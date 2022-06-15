@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <style>
+        div {
+            padding:50px;
+            border:1px solid black;
+        }
+        p{
+            border:1px solid blue;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box1 = document.getElementById("box1");
+            var box2 = document.getElementById("box2");
+
+            box1.onmouseout = function(){
+                this.style.backgroundColor = "red";
+            }
+            box2.onmouseleave = function(){
+                this.style.backgroundColor = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>onmouseout 일때</h2>
+    <div id="box1">
+        <p><a href="#">링크</a></p>
+        <p><a href="#">링크</a></p>
+        <p><a href="#">링크</a></p>
+    </div>
+    <h2>onmouseleave 일때</h2>
+    <div id="box2">
+        <p><a href="#">링크</a></p>
+        <p><a href="#">링크</a></p>
+        <p><a href="#">링크</a></p>
+    </div>
+</body>
+</html>

@@ -15,16 +15,16 @@
         }
     </style>
     <script>
-        window.onload = () => {
-            var div = document.getElementById('div');
-            div.onmouseover = () =>{
+        window.onload = function () {
+            var div = document.querySelector('div');
+
+            div.onmouseenter = () => {
                 div.style.borderColor = 'red';
-                console.log('over');
+                console.log('enter');
             }
-            div.onmouseout = () => {
+            div.onmouseleave = () => {
                 div.style.borderColor = 'black';
-                console.log('out');
-                
+                console.log('leave');
             }
         }
     </script>
