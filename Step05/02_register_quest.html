@@ -145,11 +145,35 @@
             id_result.innerHTML = '아이디가 올바르게 입력되었습니다.';
             return true;
         }
+        function passCheck(){
+            var pass = document.querySelector('#pass');
+            var pass_chk = document.querySelector('#pass_chk');
+            var pass_check = document.querySelector('.pass_check');
+            if(pass.value == pass_chk.value){
+                pass_check.innerHTML = '암호가 일치합니다.';
+            }else{
+                pass_check.innerHTML = '암호가 일치하지 않습니다.';
+                if(pass_check.classList.contains('true'))
+                    pass_check.classList.remove('true');
+                if(!pass_check.classList.contains('false'))
+                    pass_check.classList.add('false');
+                return false;
+            }
+            if(pass_check.classList.contains('false'))
+                pass_check.classList.remove('false');
+            if(!pass_check.classList.contains('true'))
+                pass_check.classList.add('true');
+                
+            return true;
+        }
         window.onload = () => {
             var frm = document.querySelector("#frm");
             var id = document.querySelector("#id");
+            var pass = document.querySelector('#pass');
+            var pass_chk = document.querySelector('#pass_chk');
 
             id.onkeyup = idCheck;
+            pass.onkeyup = pass_chk.onkeyup = passCheck;
             frm.onsubmit = (e) => {
                 if(!idCheck())
                     e.preventDefault();
