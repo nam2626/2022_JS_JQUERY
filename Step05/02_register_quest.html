@@ -149,16 +149,24 @@
             var pass = document.querySelector('#pass');
             var pass_chk = document.querySelector('#pass_chk');
             var pass_check = document.querySelector('.pass_check');
-            if(pass.value == pass_chk.value){
-                pass_check.innerHTML = '암호가 일치합니다.';
-            }else{
+
+            var reg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&^])[A-Za-z\d@$!%*#?&^]{8,20}$/;
+            var flag = false;
+            if(!reg.test(pass.value)){
+                pass_check.innerHTML = '암호 형식에 일치하지 않습니다.'
+                flag = true;
+            }else if(pass.value != pass_chk.value){
                 pass_check.innerHTML = '암호가 일치하지 않습니다.';
+                flag = true;
+            }
+            if(flag){
                 if(pass_check.classList.contains('true'))
                     pass_check.classList.remove('true');
                 if(!pass_check.classList.contains('false'))
                     pass_check.classList.add('false');
-                return false;
+                    return false;
             }
+            pass_check.innerHTML = '암호가 정상적으로 입력되었습니다.';
             if(pass_check.classList.contains('false'))
                 pass_check.classList.remove('false');
             if(!pass_check.classList.contains('true'))
@@ -176,6 +184,8 @@
             pass.onkeyup = pass_chk.onkeyup = passCheck;
             frm.onsubmit = (e) => {
                 if(!idCheck())
+                    e.preventDefault();
+                else if(!passCheck())
                     e.preventDefault();
             }
         }
