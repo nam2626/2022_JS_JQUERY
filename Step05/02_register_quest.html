@@ -179,8 +179,33 @@
             var nick_length = document.querySelector('#nick_length');
             if(nick.value.length > 20){
                 nick.value = nick.value.substr(0,20);
+                return false;
             }
             nick_length.innerHTML = `${nick.value.length}/20`;
+            return true;
+        }
+        function checkTel(){
+            var tel = document.querySelector("#tel");
+            console.log(isNaN(tel.value),tel.value.length != 10, tel.value.length != 11)
+            if(isNaN(tel.value)){
+                if(tel.classList.contains('true'))
+                    tel.classList.remove('true');
+                if(!tel.classList.contains('false'))
+                    tel.classList.add('false');
+                return false;
+            }
+            if(tel.value.length != 10 && tel.value.length != 11){
+                if(tel.classList.contains('true'))
+                    tel.classList.remove('true');
+                if(!tel.classList.contains('false'))
+                    tel.classList.add('false');
+                return false;
+            }            
+            if(tel.classList.contains('false'))
+                    tel.classList.remove('false');
+            if(!tel.classList.contains('true'))
+                tel.classList.add('true');
+            return true;
         }
         window.onload = () => {
             var frm = document.querySelector("#frm");
@@ -188,15 +213,21 @@
             var pass = document.querySelector('#pass');
             var pass_chk = document.querySelector('#pass_chk');
             var nick = document.querySelector('#nick');
+            var tel = document.querySelector("#tel");
 
             id.onkeyup = idCheck;
             pass.onkeyup = pass_chk.onkeyup = passCheck;
             nick.onkeyup = checkNick;
+            tel.onkeyup = checkTel;
 
             frm.onsubmit = (e) => {
                 if(!idCheck())
                     e.preventDefault();
                 else if(!passCheck())
+                    e.preventDefault();
+                else if(!checkNick)
+                    e.preventDefault();
+                else if(!checkTel)
                     e.preventDefault();
             }
         }
