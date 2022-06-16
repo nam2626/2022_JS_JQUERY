@@ -174,14 +174,25 @@
                 
             return true;
         }
+        function checkNick(){
+            var nick = document.querySelector('#nick');
+            var nick_length = document.querySelector('#nick_length');
+            if(nick.value.length > 20){
+                nick.value = nick.value.substr(0,20);
+            }
+            nick_length.innerHTML = `${nick.value.length}/20`;
+        }
         window.onload = () => {
             var frm = document.querySelector("#frm");
             var id = document.querySelector("#id");
             var pass = document.querySelector('#pass');
             var pass_chk = document.querySelector('#pass_chk');
+            var nick = document.querySelector('#nick');
 
             id.onkeyup = idCheck;
             pass.onkeyup = pass_chk.onkeyup = passCheck;
+            nick.onkeyup = checkNick;
+
             frm.onsubmit = (e) => {
                 if(!idCheck())
                     e.preventDefault();
