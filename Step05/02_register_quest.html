@@ -124,21 +124,36 @@
 
             if(id.value.length < 8 || id.value.length > 20){
                 id_result.innerHTML = '아이디는 글자수가 8~20글자 사이로 사용하세요';
-                if(!id_result.classList.contains('true')) //true 클래스가 있는지?
+                if(id_result.classList.contains('true')) //true 클래스가 있는지?
                 id_result.classList.remove('true'); //true 클래스 제거
                 if(!id_result.classList.contains('false'))
                     id_result.classList.add('false'); // false 클래스 추가
                 return false;
             }
-            if(!id_result.classList.contains('false'))
+            if(!isNaN(id.value)){
+                id_result.innerHTML = '아이디는 숫자만 쓸수 없습니다.';
+                if(id_result.classList.contains('true'))
+                id_result.classList.remove('true'); 
+                if(!id_result.classList.contains('false'))
+                    id_result.classList.add('false');
+                return false;
+            }
+            if(id_result.classList.contains('false'))
                 id_result.classList.remove('false');
-                if(!id_result.classList.contains('true'))
-                    id_result.classList.add('true');
+            if(!id_result.classList.contains('true'))
+                id_result.classList.add('true');
             id_result.innerHTML = '아이디가 올바르게 입력되었습니다.';
             return true;
         }
         window.onload = () => {
-            
+            var frm = document.querySelector("#frm");
+            var id = document.querySelector("#id");
+
+            id.onkeyup = idCheck;
+            frm.onsubmit = (e) => {
+                if(!idCheck())
+                    e.preventDefault();
+            }
         }
     </script>
 </head>
