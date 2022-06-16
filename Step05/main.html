@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .flex_container{
+            display: flex;
+            flex-direction: column;
+            width: 1200px;
+            margin:0 auto;
+        }
+        #member_bar{
+            background-color: #e9e9e9;
+            text-align: right;
+        }
+        #member_bar > div{
+            width: 300px;
+            display: inline-block;
+        }
+        #member_bar img{
+            width: 50px;
+            float: left;
+        }
+        #member_bar p{
+            float: left;
+            text-align: left;
+            margin-top: 2px;
+            padding-left: 10px;
+        }
+        .ad_img{
+            position: relative;
+            font-size: 0px;
+        }
+        .ad_img button{
+            background: none;
+            border:none;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.5);
+            top:calc(50% - 25px);
+        }
+        .ad_img button img{
+            width: 50px;
+        }
+        .right_arrow{
+            right: 0px;
+        }
+        nav{
+            background-color: #e9e9e9;
+            position: relative;
+        }
+        .main_menu{
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        nav a:link, nav a:visited{
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            color:black;
+            width: 200px;
+            padding: 20px 0px;
+            text-align: center;
+            display: inline-block;  
+        }
+        nav a:hover{
+            background-color: #b0b0b0;
+        }
+
+        .sub_menu_container{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            position: absolute;
+            z-index:1000;
+            background-color: #e9e9e97e;
+        }
+        .sub_menu{
+            width: 200px;
+            list-style-type: none;
+        }
+        section{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        section h2{
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        section table{
+            width: 400px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        section table td, section table th{
+            padding: 10px 20px;
+            border-top: 1px solid #e9e9e9;
+            border-bottom: 1px solid #e9e9e9;
+        }
+        footer{
+            background-color: #e9e9e9;
+            padding:20px; 
+        }
+        footer ul{
+            list-style-type: none;
+        }
+        footer ul li{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex_container">
+        <header>
+            <div id="member_bar">
+                <div>
+                    <img src="img/profile.png" alt="">
+                    <p>OOO 로그인 하셨습니다</p>
+                    <p>로그아웃 | 정보수정</p>
+                </div>
+            </div>
+            <div class="ad_img">
+                <button class="left_arrow"><img src="img/left_arrow.png" alt=""></button>
+                <button class="right_arrow"><img src="img/right_arrow.png" alt=""></button>
+                <img src="img/main_4.jpg" alt="">
+            </div>
+        </header>
+        <nav>
+            <ul class="main_menu">
+                <li><a href="main.html">HOME</a></li>
+                <li><a href="sub_page2.html">예약</a></li>
+                <li><a href="#">펜션 스토리</a></li>
+                <li><a href="#">펜션 소개</a></li>
+            </ul>
+            <div class="sub_menu_container">
+                <ul class="sub_menu"></ul>
+                <ul class="sub_menu">
+                    <li><a href="#">예약하기</a></li>
+                    <li><a href="#">예약조회</a></li>
+                    <li><a href="#">예약취소</a></li>
+                </ul>
+                <ul class="sub_menu">
+                    <li><a href="#">커뮤니티</a></li>
+                    <li><a href="#">갤러리</a></li>
+                    <li><a href="#">QnA</a></li>
+                </ul>
+                <ul class="sub_menu">
+                    <li><a href="sub_page1.html">오시는 길</a></li>
+                    <li><a href="#">시설안내</a></li>
+                    <li><a href="#">SNS</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section>
+            <article>
+                <h2>공지사항</h2>
+                <table>
+                    <tr>
+                        <th>글번호</th>
+                        <th>제목</th>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>제목1</td>
+                        <td>2021-07-26</td>
+                        <td>33</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>제목2</td>
+                        <td>2021-07-25</td>
+                        <td>543</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>제목3</td>
+                        <td>2021-07-23</td>
+                        <td>331</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>제목4</td>
+                        <td>2021-07-22</td>
+                        <td>33</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>제목5</td>
+                        <td>2021-07-21</td>
+                        <td>13</td>
+                    </tr>
+                </table>
+            </article>
+            <article>
+                <h2>이벤트</h2>
+                <table>
+                    <tr>
+                        <th>글번호</th>
+                        <th>제목</th>
+                        <th>작성일</th>
+                        <th>조회수</th>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>제목1</td>
+                        <td>2021-07-26</td>
+                        <td>33</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>제목2</td>
+                        <td>2021-07-25</td>
+                        <td>543</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>제목3</td>
+                        <td>2021-07-23</td>
+                        <td>331</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>제목4</td>
+                        <td>2021-07-22</td>
+                        <td>33</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>제목5</td>
+                        <td>2021-07-21</td>
+                        <td>13</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+        <footer>
+            <ul>
+                <li>OOOO 펜션</li>
+                <li>대표자 : OOO</li>
+                <li>연락처 : 010-0000-0000</li>
+                <li>주소 : 강원도 평창시 OOOOOOO</li>
+            </ul>
+        </footer>
+    </div>
+</body>
+</html>
