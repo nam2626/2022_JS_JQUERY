@@ -79,12 +79,16 @@
 
         .sub_menu_container{
             width: 100%;
+            height: 0px;
             display: flex;
             flex-direction: row;
             justify-content: center;
             position: absolute;
             z-index:1000;
             background-color: #e9e9e97e;
+            overflow: hidden;
+            transition-duration: 1s;
+            transition-property: all;
         }
         .sub_menu{
             width: 200px;
@@ -121,6 +125,21 @@
             margin-top: 10px;
         }
     </style>
+    <script>
+        window.onload = () => {
+            var nav = document.querySelector('nav');
+            var sub_menu_container = document.querySelector('.sub_menu_container');
+            var height = sub_menu_container.scrollHeight;
+            console.log(height);
+            nav.onmouseenter = () => {
+                sub_menu_container.style.height = height + "px";
+            }
+            nav.onmouseleave = () => {
+                sub_menu_container.style.height = "0px";
+            }
+
+        }
+    </script>
 </head>
 <body>
     <div class="flex_container">
