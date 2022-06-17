@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //버튼 태그 선택, 클릭 이벤트 설정
+            $('button').click(function(){
+                //아이디 선택후 아이디에 입력된 값을 읽어옴
+                var id = $("#id").val();
+                //password 선택후 password에 입력된 값을 읽어옴
+                var pass = $("#password").val();
+                $('#result').html(`입력하신 아이디는 ${id}<br>입력하신 암호는 ${pass}`);
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="id"> <input type="password" id="password">
+    <button>로그인</button>
+    <hr>
+    <div id="result"></div> 
+</body>
+</html>
