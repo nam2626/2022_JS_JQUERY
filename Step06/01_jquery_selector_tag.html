@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //선택자 사용방법 : $('선택자') --> 해당 html 요소들을 선택
+            //태그 선택자
+            $("p").css("text-decoration","underline red");
+            //h2 선택 - 글자색을 파랑색으로 변경
+            $("h2").css("color","#0000FF");
+        });
+    </script>
+</head>
+<body>
+    <h2>제목</h2>
+    <p>내용</p>
+    <p>내용</p>
+    <p>내용</p>
+    <div>
+        <p>div 내부 내용</p>
+    </div>
+    <p>내용</p>
+    <p>내용</p>
+</body>
+</html>
