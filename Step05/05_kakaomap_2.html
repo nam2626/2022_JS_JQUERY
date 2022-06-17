@@ -22,9 +22,14 @@
                 //주소로 좌표 검색
                 //좌표값을 확인
                 var geocoder = new kakao.maps.services.Geocoder();
-                geocoder.addressSearch('해남군 송지면', function(result, status) {
+                geocoder.addressSearch(address.value, function(result, status) {
                     if (status === kakao.maps.services.Status.OK) {
                         console.log(result);
+                        // document.querySelector('#json').innerHTML = JSON.stringify(result[0].address.b_code);
+                        document.querySelector('#json').innerHTML = `${result[0].address.x} ,${result[0].address.y} `;
+
+                        var coords= new kakao.maps.LatLng(result[0].address.y, result[0].address.x);
+                        map.setCenter(coords);
                     }
                 });
             }
@@ -36,5 +41,6 @@
     <hr>
     <!-- 지도를 표시할 div 입니다 -->
     <div id="map" style="width:100%;height:350px;"></div>
+    <div id="json"></div>
 </body>
 </html>
