@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //인덱스 번호가 2인 요소를 선택
+            $('ul li').eq(2).css('color','red');
+            //인덱스 번호가 2보다 작은 요소들을 선택
+            $('ul li:lt(2)').css('color','blue');
+            //인덱스 번호가 2보다 큰 요소들을 선택
+            $('ul li:gt(2)').css('color','yellow');
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li>메뉴5</li>
+    </ul>
+    <ul>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li>메뉴5</li>
+    </ul>
+    <ul>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li>메뉴5</li>
+    </ul>
+</body>
+</html>

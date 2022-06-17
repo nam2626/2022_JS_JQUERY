@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('li:only-child').css('color','red');
+            $('#ul_1 li').slice(1,3).css('color', 'green');
+        });
+    </script>
+</head>
+<body>
+    <ul id="ul_1">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li>메뉴5</li>
+        <li>메뉴6</li>
+    </ul>
+    <ul id="ul_2">
+        <li>메뉴1</li>
+    </ul>
+</body>
+</html>

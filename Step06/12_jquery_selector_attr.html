@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //속성 선택자
+            //해당 속성이 있는 경우
+            $('a[download]').css('background-color','coral');
+            //일치하는 속성값
+            $('a[target=_blank]').css('background-color','yellow');
+            //시작하는 속성값
+            $('a[href^=http]').css('text-decoration','none');
+            //포함하는 속성값
+            $('a[href*=lib]').css('border','1px solid black');
+            //끝나는 속성값
+            $('a[href$=jpg]').css('text-decoration','line-through');
+
+        });
+    </script>
+</head>
+<body>
+    <a href="http://www.google.co.kr" target="_blank">구글로 이동</a><br>
+    <a href="/resource/img/grill1.jpg" download>첨부파일 다운로드</a><br>
+    <a href="/resource/lib/jquery-3.6.0.min.js" download>제이쿼리 다운로드</a>
+</body>
+</html>
