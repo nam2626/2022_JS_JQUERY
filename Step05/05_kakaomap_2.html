@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카카오 맵</title>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c721dcdd3825e3c088d1453308625aa0&libraries=services"></script>
+    <script>
+        window.onload = () => {
+            var mapContainer = document.getElementById('map'), 
+                mapOption = { 
+                    center: new kakao.maps.LatLng(33.450701, 126.570667), 
+                    level: 3
+                };
+            var map = new kakao.maps.Map(mapContainer, mapOption); 
+            //-------------------------------------------------------
+            var btn = document.querySelector("#btn");
+            btn.onclick = () =>{
+                var address = document.querySelector('#address');
+
+                //주소로 좌표 검색
+                //좌표값을 확인
+                var geocoder = new kakao.maps.services.Geocoder();
+                geocoder.addressSearch('해남군 송지면', function(result, status) {
+                    if (status === kakao.maps.services.Status.OK) {
+                        console.log(result);
+                    }
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="address"><button id="btn">이동</button>
+    <hr>
+    <!-- 지도를 표시할 div 입니다 -->
+    <div id="map" style="width:100%;height:350px;"></div>
+</body>
+</html>
