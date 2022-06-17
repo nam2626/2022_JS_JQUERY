@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>카카오 맵</title>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c721dcdd3825e3c088d1453308625aa0&libraries=services"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=js app key&libraries=services"></script>
     <script>
         window.onload = () => {
             var mapContainer = document.getElementById('map'), 
                 mapOption = { 
                     center: new kakao.maps.LatLng(33.450701, 126.570667), 
-                    level: 3
+                    level: 1
                 };
             var map = new kakao.maps.Map(mapContainer, mapOption); 
             //-------------------------------------------------------
@@ -30,6 +30,18 @@
 
                         var coords= new kakao.maps.LatLng(result[0].address.y, result[0].address.x);
                         map.setCenter(coords);
+
+                        var maker = new kakao.maps.Marker({
+                            map : map,
+                            position : coords
+                        });
+                        var iwContent = `<div style='width:150px;text-align:center;padding:6px;'>인포윈도우테스트</div>`;
+                        var infoWindow =  new kakao.maps.InfoWindow({
+                            position : coords, 
+                            content : iwContent 
+                        });
+                        infoWindow.open(map,maker);
+
                     }
                 });
             }
