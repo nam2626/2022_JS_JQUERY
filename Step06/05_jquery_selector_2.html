@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //선택한 요소의 형요소, 동생요소 선택
+            // $('.txt + p').css('background-color','yellow');
+            $('.txt').next().css('background-color','yellow');
+            $('.txt').next().next().css('background-color','green');
+            $('.txt').prev().css('background-color','gray');
+            $('.txt').prev().prev().css('color','red');
+            //선택한 요소의 모든 동생요소 선택
+            $('.tit').nextAll().css('color','blue');
+            //선택한 요소의 모든 형요소 선택
+            $('.tit').prevAll().css('color','green');
+            //선택한 요소를 제외한 모든 형제들을 선택
+            $('.tit').siblings().css('text-decoration','underline');
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+		<h1>인접 관계 선택자</h1>
+		<p>내용1</p>
+		<p class="txt">내용2</p>
+		<p>내용3</p>
+		<p>내용4</p>
+	</div>
+    <hr>
+    <div>
+		<h1>인접 관계 선택자</h1>
+		<p>내용1</p>
+		<p class="tit">내용2</p>
+		<p>내용3</p>
+		<p>내용4</p>
+	</div>
+</body>
+</html>

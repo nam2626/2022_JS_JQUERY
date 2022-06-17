@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //부모 선택자
+            $('.txt1').parent().css('border','1px solid black');
+            $('.txt1').parent().parent().css('border','1px solid red');
+            //txt2의 부모들 중 모든 부모(선택한) 선택자
+            $('.txt2').parents().css('border','1px dashed blue');
+            $('.txt2').parents('div').css('border','5px dashed green');
+        });
+    </script>
+    <style>
+        section,div{
+            padding:20px;
+        }
+        p{
+            background-color: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">선택자</h1>
+	<section>
+		<div>
+			<p class="txt1">내용</p>
+		</div>
+	</section>
+	<div>
+		<div>
+			<p class="txt2">내용</p>
+		</div>
+	</div> 
+</body>
+</html>
