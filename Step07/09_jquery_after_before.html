@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //동생요소 추가
+            $('#child').after('<li>after - 1</li>');
+            $('#child').after('<li>after - 2</li>');
+            $('#child').after('<li>after - 3</li>');
+            //형 요소 추가
+            $('#child').before('<li>before - 1</li>');
+            $('#child').before('<li>before - 2</li>');
+            $('#child').before('<li>before - 3</li>');
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li id="child">내용</li>
+    </ul>
+</body>
+</html>
