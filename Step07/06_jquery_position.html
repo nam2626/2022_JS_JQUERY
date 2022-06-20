@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #container{
+            width: 500px;
+            height: 300px;
+            margin:20px auto;
+            position: relative;
+            background-color: darkgray;
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            left: 100px;
+            top:50px;
+            border:1px solid black;
+            position: absolute;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('p:first > span').text($('.box').offset().top);
+            $('p:last > span').text($('.box').position().top);
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div class="box"></div>
+    </div>
+    <div>
+        <p>box의 절대좌표 값 top : <span></span></p>
+        <p>box의 상대좌표 값 top : <span></span></p>
+    </div>
+</body>
+</html>
