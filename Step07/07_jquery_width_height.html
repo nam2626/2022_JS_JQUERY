@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        #d1{
+            width:100px;
+            height: 100px;
+            padding:30px;
+            border:10px solid black;
+            margin:30px;
+        }
+        #d2{
+            width:100px;
+            height: 100px;
+            padding:30px;
+            border:10px solid black;
+            margin:30px;
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            console.log($('#d1').width(),$('#d1').height());//내용 영역
+            console.log($('#d1').innerWidth(),$('#d1').innerHeight());//padding 영역까지 길이
+            console.log($('#d1').outerWidth(),$('#d1').outerHeight());//border 영역까지 길이
+            //$('#d2').width(100); //내용 영역을 100px로 잡음
+            // $('#d2').innerWidth(100);//padding + content = 100px
+            $('#d2').outerWidth(100);//border + padding + content = 100px
+        });
+    </script>
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+</body>
+</html>
