@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            console.log($('#d3').html());
+            console.log($('#d3').text());
+            //innerHTML을 jQuery 담당 부분
+            $("#d1").html('<h2>제목태그</h2>');
+            //innerText을 jQuery 담당 부분
+            $("#d2").text('<h2>제목태그</h2>');
+        });
+    </script>
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3">
+        <p>#d3 문단 내용</p>
+        <p>#d3 문단 내용</p>
+    </div>
+</body>
+</html>
