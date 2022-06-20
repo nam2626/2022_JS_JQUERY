@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            console.log($('a').attr('href'));
+            //a 태그의 이동할 링크 url 구글로 설정
+            $('a').attr('href','https://www.google.co.kr');
+            //a 태그의 target 속성값을 읽어와서 콘솔에 출력
+            $('a').attr('target','_blank');
+            console.log($('a').attr('target'));
+            //input 태그의 value 속성값을 자유롭게 지정
+            $('input').attr('value','test');
+            //콘솔에 input tag value 속성값 출력 
+            console.log($('input').attr('value'));
+            //속성 제거
+            $('a').removeAttr('target');
+        });
+    </script>
+</head>
+<body>
+    <a href="#">구글로 이동</a><br>
+    <form action="">
+        <input type="text" name="txt"><button>전송</button>
+    </form> 
+</body>
+</html>
