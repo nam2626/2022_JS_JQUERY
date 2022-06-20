@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //val() value 값을 읽어옴
+            console.log($('#txt').val());
+            console.log($('#txt').attr('value'));
+            //버튼 클릭이벤트
+            $('#btn').click(function(){
+                console.log('---클릭이벤트---');
+                // $('#txt').attr('value','111111');//태그 속성값
+                $('#txt').val('1111111');//Property 값을 설정
+                console.log($('#txt').attr('value'));
+                console.log($('#txt').val());
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="txt" value="test">
+    <button id="btn">실행</button>
+</body>
+</html>
