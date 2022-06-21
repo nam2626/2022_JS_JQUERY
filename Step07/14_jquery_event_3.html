@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#frm').submit(function(e){
+                var flag = false;
+                $('input').each(function(i,obj){
+                    if($(obj).val().length == 0)
+                        flag = true;
+                });
+                if(flag){
+                    alert('아이디와 비밀번호를 모두 입력하세요');
+                    e.preventDefault();
+                }
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="frm">
+        <input type="text" name="id" placeholder="아이디 입력"><br>
+        <input type="password" name="pass" placeholder="암호 입력"><br>
+        <button>로그인</button>
+    </form>    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('button').click(function(){
+                var n1 = Number($('#n1').val());
+                var n2 = Number($('#n2').val());
+                var op = $('#op').val();
+                console.log(n1,n2,op)
+                var result = 0;
+                if(op == '+')
+                    result = n1 + n2;
+                else if(op == '-')
+                    result = n1 - n2;
+                else if(op == '*')
+                    result = n1 * n2;
+                else
+                    result = n1 / n2;
+                $('#result').val(result);
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="n1">
+    <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" id="n2">
+    <!--아래 버튼 클릭시 연산 실행-->
+    <button>=</button>
+    <input type="text" id="result" readonly>
+    <hr>
+    <!--연산을 실행할 때마다 아래 div에 계산한 이력을 쭉 출력
+        5 + 3 = 8       2021-04-21 16:04:22
+        5 * 3 = 15      2021-04-21 16:05:22
+        5 / 3 = 1.66666 2021-04-21 16:14:22
+        5 - 3 = 2       2021-04-21 16:24:22
+    -->
+    <div id="history"></div>
+</body>
+</html>
