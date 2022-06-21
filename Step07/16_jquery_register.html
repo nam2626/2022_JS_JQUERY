@@ -150,36 +150,25 @@
             return true;
         }
         function checkNick(){
-            var nick = document.querySelector('#nick');
-            var nick_length = document.querySelector('#nick_length');
-            if(nick.value.length > 20){
-                nick.value = nick.value.substr(0,20);
+            if($('#nick').val().length > 20){
+                $('#nick').val($('#nick').val().substr(0,20));
                 return false;
             }
-            nick_length.innerHTML = `${nick.value.length}/20`;
+            $('#nick_length').html(`${$('#nick').val().length}/20`);
             return true;
         }
         function checkTel(){
-            var tel = document.querySelector("#tel");
-            console.log(isNaN(tel.value),tel.value.length != 10, tel.value.length != 11)
-            if(isNaN(tel.value)){
-                if(tel.classList.contains('true'))
-                    tel.classList.remove('true');
-                if(!tel.classList.contains('false'))
-                    tel.classList.add('false');
+            $("#tel");
+            console.log(isNaN($("#tel").val()),$("#tel").val().length != 10, $("#tel").val().length != 11)
+            if(isNaN($("#tel").val())){
+                $("#tel").removeClass('true').addClass('false');
                 return false;
             }
-            if(tel.value.length != 10 && tel.value.length != 11){
-                if(tel.classList.contains('true'))
-                    tel.classList.remove('true');
-                if(!tel.classList.contains('false'))
-                    tel.classList.add('false');
+            if($("#tel").val().length != 10 && $("#tel").val().length != 11){
+                $("#tel").removeClass('true').addClass('false');
                 return false;
             }            
-            if(tel.classList.contains('false'))
-                    tel.classList.remove('false');
-            if(!tel.classList.contains('true'))
-                tel.classList.add('true');
+            $("#tel").removeClass('false').addClass('true');
             return true;
         }
         window.onload = () => {
