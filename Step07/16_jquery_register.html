@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>회원가입 예제</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .container {
+            width: 700px;
+            padding: 40px;
+            margin: 0 auto;
+            border: 1px solid #d1d1d1;
+        }
+
+        .container>form>ul {
+            list-style-type: none;
+        }
+
+        .container>form>ul>li {
+            margin-top: 10px;
+        }
+
+        .container>form>ul>ul {
+            margin-top: 5px;
+            padding-left: 40px;
+            list-style-type: disc;
+            color: gray;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .border_bottom {
+            border-bottom: 2px solid #c4c4c4;
+        }
+
+        input {
+            border: none;
+            outline: none;
+            height: 50px;
+            width: 80%;
+            font-size: 20px;
+        }
+
+        .sub_txt {
+            display: inline-block;
+            text-align: right;
+            width: 20%;
+            font-size: 20px;
+            padding-right: 10px;
+            box-sizing: border-box;
+            font-weight: bold;
+            color: gray;
+        }
+
+        select {
+            width: 100px;
+            font-size: 20px;
+            height: 50px;
+            box-sizing: border-box;
+            border: none;
+            border-right: 1px solid #c4c4c4;
+        }
+
+        #tel {
+            padding-left: 10px;
+        }
+
+        .btn_send_no {
+            width: 230px;
+            height: 50px;
+            background-color: white;
+            border: 1px solid #c4c4c4;
+            border-radius: 25px;
+        }
+
+        .btn_send_no:hover {
+            background-color: #d4d4d4;
+        }
+
+        .btn_send_no:active {
+            background-color: white;
+        }
+
+        .btn_next {
+            width: 100%;
+            height: 50px;
+            background-color: #d4d4d4;
+            border-radius: 10px;
+            border: none;
+        }
+
+        .btn_next:hover {
+            background-color: #ffe606;
+        }
+
+        .true {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .false {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        function idCheck(){
+            if($('#id').val().length < 8 || $('#id').val().length > 20){
+                $('.id_result').html('아이디는 글자수가 8~20글자 사이로 사용하세요');
+                $('.id_result').removeClass('true').addClass('false');
+                return false;
+            }
+            if(!isNaN($('#id').val())){
+                $('.id_result').html('아이디는 숫자만 쓸수 없습니다.');
+                $('.id_result').removeClass('true').addClass('false');
+                return false;
+            }
+            $('.id_result').removeClass('false').addClass('true');
+            $('.id_result').html('아이디가 올바르게 입력되었습니다.');
+            return true;
+        }
+        function passCheck(){
+            var pass = document.querySelector('#pass');
+            var pass_chk = document.querySelector('#pass_chk');
+            var pass_check = document.querySelector('.pass_check');
+
+            var reg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&^])[A-Za-z\d@$!%*#?&^]{8,20}$/;
+            var flag = false;
+            if(!reg.test(pass.value)){
+                pass_check.innerHTML = '암호 형식에 일치하지 않습니다.'
+                flag = true;
+            }else if(pass.value != pass_chk.value){
+                pass_check.innerHTML = '암호가 일치하지 않습니다.';
+                flag = true;
+            }
+            if(flag){
+                if(pass_check.classList.contains('true'))
+                    pass_check.classList.remove('true');
+                if(!pass_check.classList.contains('false'))
+                    pass_check.classList.add('false');
+                    return false;
+            }
+            pass_check.innerHTML = '암호가 정상적으로 입력되었습니다.';
+            if(pass_check.classList.contains('false'))
+                pass_check.classList.remove('false');
+            if(!pass_check.classList.contains('true'))
+                pass_check.classList.add('true');
+                
+            return true;
+        }
+        function checkNick(){
+            var nick = document.querySelector('#nick');
+            var nick_length = document.querySelector('#nick_length');
+            if(nick.value.length > 20){
+                nick.value = nick.value.substr(0,20);
+                return false;
+            }
+            nick_length.innerHTML = `${nick.value.length}/20`;
+            return true;
+        }
+        function checkTel(){
+            var tel = document.querySelector("#tel");
+            console.log(isNaN(tel.value),tel.value.length != 10, tel.value.length != 11)
+            if(isNaN(tel.value)){
+                if(tel.classList.contains('true'))
+                    tel.classList.remove('true');
+                if(!tel.classList.contains('false'))
+                    tel.classList.add('false');
+                return false;
+            }
+            if(tel.value.length != 10 && tel.value.length != 11){
+                if(tel.classList.contains('true'))
+                    tel.classList.remove('true');
+                if(!tel.classList.contains('false'))
+                    tel.classList.add('false');
+                return false;
+            }            
+            if(tel.classList.contains('false'))
+                    tel.classList.remove('false');
+            if(!tel.classList.contains('true'))
+                tel.classList.add('true');
+            return true;
+        }
+        window.onload = () => {
+            var frm = document.querySelector("#frm");
+            var id = document.querySelector("#id");
+            var pass = document.querySelector('#pass');
+            var pass_chk = document.querySelector('#pass_chk');
+            var nick = document.querySelector('#nick');
+            var tel = document.querySelector("#tel");
+
+            id.onkeyup = idCheck;
+            pass.onkeyup = pass_chk.onkeyup = passCheck;
+            nick.onkeyup = checkNick;
+            tel.onkeyup = checkTel;
+
+            frm.onsubmit = (e) => {
+                if(!idCheck())
+                    e.preventDefault();
+                else if(!passCheck())
+                    e.preventDefault();
+                else if(!checkNick)
+                    e.preventDefault();
+                else if(!checkTel)
+                    e.preventDefault();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>kakao</h1>
+    <div class="container">
+        <h2>카카오 계정 정보를 입력해 주세요.</h2>
+        <form action="" id="frm">
+            <ul>
+                <li><label for="id">카카오계정 이메일</label></li>
+                <li class="border_bottom">
+                    <input type="text" name="id" id="id" placeholder="아이디를 입력하세요"><span
+                        class="sub_txt">@kakao.com</span>
+                </li>
+                <li class="id_result"></li>
+                <ul>
+                    <li>입력한 카카오메일로 카카오 계정에 로그인할 수 있습니다.</li>
+                    <li>한번 만든 카카오 메일은 변경할 수 없으니, 오타가 없도록 신중히 확인해 주세요.</li>
+                    <li>생성한 카카오메일로 카카오계정과 관련한 알림을 받아볼 수 있습니다.</li>
+                </ul>
+                <li><label for="pass">비밀번호</label></li>
+                <li class="border_bottom">
+                    <input type="password" name="pass" id="pass" placeholder="비밀번호(8~32자리)">
+                </li>
+                <li class="border_bottom">
+                    <input type="password" id="pass_chk" placeholder="비밀번호 재입력">
+                </li>
+                <li class="pass_check"></li>
+                <li><label for="nick">닉네임</label></li>
+                <li class="border_bottom">
+                    <input type="text" name="nick" id="nick" placeholder="닉네임을 입력하세요"><span class="sub_txt" id="nick_length">0/20</span>
+                </li>
+                <li><label for="tel">전화번호</label></li>
+                <li class="border_bottom">
+                    <select name="gcode" id="gcode">
+                        <option value="82">+82</option>
+                        <option value="1">+1</option>
+                        <option value="84">+84</option>
+                        <option value="55">+55</option>
+                    </select><input type="text" name="tel" id="tel" placeholder="전화번호 입력하세요 -는 빼고" class="left_border">
+                </li>
+                <li>
+                    <button type="button" class="btn_send_no">인증번호 전송</button>
+                </li>
+                <li>
+                    <button class="btn_next">다음</button>
+                </li>
+
+            </ul>
+        </form>
+
+    </div>
+</body>
+
+</html>
