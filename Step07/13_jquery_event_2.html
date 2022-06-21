@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //이벤트 바인딩, 여러개 이벤트 지정
+            $('p').on('click mouseout',function(){
+                alert($('#container').html());
+            });
+            //버튼 클릭이벤트 작성
+            $('button').click(function(){
+                //이벤트를 제거
+                $('p').off('mouseout');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <p>클릭이벤트</p>
+    </div>
+    <button>mouseout 이벤트 삭제</button>
+</body>
+</html>
