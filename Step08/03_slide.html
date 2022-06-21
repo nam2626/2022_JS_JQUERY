@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <style>
+        img{
+            width: 600px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#slideUp').click(function(){
+                $('img').stop().slideUp(1000);
+            });
+            $('#slideDown').click(function(){
+                $('img').stop().slideDown(1000);
+            });
+            $('#slideToggle').click(function(){
+                $('img').slideToggle(1000);
+            });
+            $("#stop").click(function(){
+                $('img').stop();
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="slideUp">slideUp</button>
+    <button id="slideDown">slideDown</button>
+    <button id="slideToggle">slideToggle</button>
+    <button id="stop">stop</button>
+    <hr>
+    <img src="img/tree.jpg" alt="">
+</body>
+</html>
