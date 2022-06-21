@@ -171,30 +171,24 @@
             $("#tel").removeClass('false').addClass('true');
             return true;
         }
-        window.onload = () => {
-            var frm = document.querySelector("#frm");
-            var id = document.querySelector("#id");
-            var pass = document.querySelector('#pass');
-            var pass_chk = document.querySelector('#pass_chk');
-            var nick = document.querySelector('#nick');
-            var tel = document.querySelector("#tel");
+        $(function() {
+            $("#id").keyup(idCheck);
+            $('#pass').keyup(passCheck);
+            $('#pass_chk').keyup(passCheck);
+            $('#nick').keyup(checkNick);
+            $("#tel").keyup(checkTel);
 
-            id.onkeyup = idCheck;
-            pass.onkeyup = pass_chk.onkeyup = passCheck;
-            nick.onkeyup = checkNick;
-            tel.onkeyup = checkTel;
-
-            frm.onsubmit = (e) => {
+            $("#frm").submit((e) => {
                 if(!idCheck())
                     e.preventDefault();
                 else if(!passCheck())
                     e.preventDefault();
-                else if(!checkNick)
+                else if(!checkNick())
                     e.preventDefault();
-                else if(!checkTel)
+                else if(!checkTel())
                     e.preventDefault();
-            }
-        }
+            });
+        });
     </script>
 </head>
 
