@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //버튼 클릭하면 #result에 p 태그를 추가
+            //<p>추가된 p 태그</p> <-- 추가할 태그
+            var i = 0;
+            $('button').click(function(){
+                //추가된 p 태그에 이벤트 처리 추가
+                // $('#result').append(`<p>추가된 p 태그 - ${i++}</p>`);
+                // $('#result > p:last').click(function(){
+                //     alert($(this).text());
+                // });
+                $(`<p>추가된 p 태그 - ${i++}</p>`).appendTo('#result').click(function(){
+                    alert($(this).text());
+                });
+                
+            });
+            //p 태그 클릭시 p 태그가 담고 있는 내용을 경고창으로 출력
+            $('p').click(function(){
+                alert($(this).text());
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>p태그 추가</button>    
+    <hr>
+    <div id="result">
+        <p>미리 작성된 p 태그</p>
+    </div>
+</body>
+</html>
