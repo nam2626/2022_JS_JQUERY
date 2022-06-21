@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        a:link, a:visited{
+            display: inline-block;
+            width: 100px;
+            padding:10px 20px;
+            background-color: #e9e9e9;
+            color:black;
+            text-decoration: none;
+            text-align: center;
+            font-size: 16px;
+        }
+        a:hover{
+            background-color: #c9c9c9;
+        }
+        a:active{
+            background-color: white;
+        }
+        #bar{
+            width:700px;
+            font-size: 0px;
+        }
+        #tab{
+            width: 700px;
+            margin:50px auto;
+        }
+        p{
+			border:1px solid #e9e9e9;
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .select{
+            background-color: #a9a9a9 !important;
+            color:white !important;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('a').click(function(){
+                $(this).addClass('select').siblings().removeClass('select');
+                $(`p:eq(${$(this).index()})`).addClass('active').siblings().removeClass('active');
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="tab">
+        <div id="bar">
+            <a href="#" class="select">TAB1</a>
+            <a href="#">TAB2</a>
+            <a href="#">TAB3</a>
+            <a href="#">TAB4</a>
+            <a href="#">TAB5</a>
+        </div>
+        <p class="active">대한민국의 경제질서는 개인과 기업의 경제상의 자유와 창의를 존중함을 기본으로 한다. 국회는 의원의 자격을 심사하며, 의원을 징계할 수 있다. 정당의 목적이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에 그 해산을 제소할 수 있고, 정당은 헌법재판소의 심판에 의하여 해산된다.</p>
+		<p>군인은 현역을 면한 후가 아니면 국무위원으로 임명될 수 없다. 체포·구속·압수 또는 수색을 할 때에는 적법한 절차에 따라 검사의 신청에 의하여 법관이 발부한 영장을 제시하여야 한다. 다만, 현행범인인 경우와 장기 3년 이상의 형에 해당하는 죄를 범하고 도피 또는 증거인멸의 염려가 있을 때에는 사후에 영장을 청구할 수 있다.</p>
+		<p>모든 국민은 사생활의 비밀과 자유를 침해받지 아니한다. 중앙선거관리위원회는 대통령이 임명하는 3인, 국회에서 선출하는 3인과 대법원장이 지명하는 3인의 위원으로 구성한다. 위원장은 위원중에서 호선한다.</p>
+		<p>이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 국회에 제출된 법률안 기타의 의안은 회기중에 의결되지 못한 이유로 폐기되지 아니한다. 다만, 국회의원의 임기가 만료된 때에는 그러하지 아니하다.</p>
+		<p>공무원의 신분과 정치적 중립성은 법률이 정하는 바에 의하여 보장된다. 학교교육 및 평생교육을 포함한 교육제도와 그 운영, 교육재정 및 교원의 지위에 관한 기본적인 사항은 법률로 정한다.</p>
+
+    </div>
+</body>
+</html>
