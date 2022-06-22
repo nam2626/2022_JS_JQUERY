@@ -5,6 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .thumnail_container{
+            width: 500px;
+            text-align: center;
+            position: relative;
+            margin: 60px auto;
+        }
+        .main_img{
+            width: 400px;
+            height: 400px;
+        }
+        .thumnail_bar{
+            width: 400px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .thumnail{
+            width: 720px;
+            height: 80px;
+            font-size: 0px;
+        }
+        .thumnail img{
+            width: 80px;
+            height: 80px;
+        }
+        .left_arrow img, .right_arrow img{
+            width: 40px;
+            height: 40px;
+        }
+        .left_arrow{
+            left: 0px;
+            bottom: 10px;
+            position: absolute;
+        }
+        .right_arrow{
+            right: 0px;
+            bottom: 10px;
+            position: absolute;
+        }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(function(){
