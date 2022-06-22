@@ -41,7 +41,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(function(){
-            
+            $('h2').click(function(){
+                //클릭된 h2 select 클래스 적용 다음 p 태그 보여줌
+                $(this).addClass('select').next().slideDown(500);
+                //클릭이 안된 나머지는 숨김 및 select 클래스를 제거
+                $('#accodion h2').not($(this)).removeClass('select').next().slideUp(500);
+                /* $('#accodion p').slideUp(500);
+                $('#accodion h2').removeClass('select');
+                $(this).addClass('select')
+                $(this).next().slideDown(500); */
+            });
         });
     </script>
 </head> 
