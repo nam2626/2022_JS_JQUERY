@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .thumnail_container{
+            width: 500px;
+            text-align: center;
+            position: relative;
+            margin: 60px auto;
+        }
+        .main_img{
+            width: 400px;
+            height: 400px;
+        }
+        .thumnail_bar{
+            width: 400px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .thumnail{
+            width: 720px;
+            height: 80px;
+            font-size: 0px;
+        }
+        .thumnail img{
+            width: 80px;
+            height: 80px;
+        }
+        .left_arrow img, .right_arrow img{
+            width: 40px;
+            height: 40px;
+        }
+        .left_arrow{
+            left: 0px;
+            bottom: 10px;
+            position: absolute;
+        }
+        .right_arrow{
+            right: 0px;
+            bottom: 10px;
+            position: absolute;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            
+            $(".left_arrow").click(function(){
+                $('.thumnail > img:first').stop().animate({'margin-left':'-160px'},500,function(){
+                    $(this).appendTo($('.thumnail')).css({'margin-left':'0px'});
+                });
+            });
+
+            $(".right_arrow").click(function(){
+               $('.thumnail > img:last').css({'margin-left':'-160px'}).prependTo($('.thumnail')).animate({'margin-left':'0px'},500);
+            });
+            $('.thumnail img').click(function(){
+                $('.main_img').attr('src',$(this).attr('src'));
+            });
+        });
+    </script>
+</head>
+<body>
+     <div class="thumnail_container">
+        <img src="image/1.jpg" class="main_img">
+        <div class="thumnail_bar">
+            <div class="thumnail">
+                <img src="image/1.jpg">
+                <img src="image/2.jpg">
+                <img src="image/3.jpg">
+                <img src="image/4.jpg">
+                <img src="image/5.jpg">
+                <img src="image/6.jpg">
+                <img src="image/7.jpg">
+                <img src="image/8.jpg">
+                <img src="image/9.jpg">
+            </div>
+        </div>
+        <a class="left_arrow"><img src="image/left_arrow.png"></a>
+        <a class="right_arrow"><img src="image/right_arrow.png"></a>
+     </div>   
+</body>
+</html>
