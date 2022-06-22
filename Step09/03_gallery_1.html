@@ -52,6 +52,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(function(){
+            var index = 0;
+
+            var thumnailWidth = $('.thumnail').width();
+            var thumnailBarWidth = $('.thumnail_bar').width();
+            $(".left_arrow").click(function(){
+                if(index==0) return;
+                index--;
+                var marginLeft = index * -80;
+                $('.thumnail').stop().animate({'margin-left':marginLeft+"px"},500);
+            });
+
+            $(".right_arrow").click(function(){
+                var marginLeft = index * -80;
+                console.log(marginLeft, thumnailWidth, thumnailBarWidth);
+                if(marginLeft + thumnailWidth == thumnailBarWidth) return;
+                index++;
+                marginLeft = index * -80;
+                $('.thumnail').stop().animate({'margin-left':marginLeft+"px"},500);
+            });
+            $('.thumnail img').click(function(){
+                $('.main_img').attr('src',$(this).attr('src'));
+            });
         });
     </script>
 </head>
