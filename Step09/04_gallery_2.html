@@ -51,16 +51,27 @@
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
+        function left_rotate(){
+            $('.thumnail > img:first').stop().animate({'margin-left':'-160px'},500,function(){
+                    $(this).appendTo($('.thumnail')).css({'margin-left':'0px'});
+                    $('.thumnail > img:first').click();
+                });
+        }
         $(function(){
             
             $(".left_arrow").click(function(){
                 $('.thumnail > img:first').stop().animate({'margin-left':'-160px'},500,function(){
                     $(this).appendTo($('.thumnail')).css({'margin-left':'0px'});
+                    $('.thumnail > img:first').click();
+                    clearInterval(auto_id);
                 });
             });
 
             $(".right_arrow").click(function(){
-               $('.thumnail > img:last').css({'margin-left':'-160px'}).prependTo($('.thumnail')).animate({'margin-left':'0px'},500);
+               $('.thumnail > img:last').css({'margin-left':'-160px'}).prependTo($('.thumnail')).animate({'margin-left':'0px'},500,function(){
+                $('.thumnail > img:first').click();
+                clearInterval(auto_id);
+               });
             });
             $('.thumnail img').click(function(){
                 $('.main_img').attr('src',$(this).attr('src'));
@@ -69,7 +80,9 @@
             });
             $('.thumnail img').css('opacity','0.5');
             $('.thumnail img:first').css('opacity','1');
-
+            var auto_id = setInterval(function(){
+                left_rotate();
+            },3000);
         });
     </script>
 </head>
