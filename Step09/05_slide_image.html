@@ -66,6 +66,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(function(){
+            var idx = 0;
+            var ani = false;
+            $('.left_arrow').click(function(){
+                if(ani)
+                    return;
+                ani = true;
+                $('.slide_img_container > img:last').prependTo($('.slide_img_container')).css('margin-left','-1200px').animate({
+                    'margin-left':'0px'
+                },1000,function(){
+                    idx--;
+                    if(idx < 0) idx = 3;
+                    $('.radio').removeClass('select');
+                    $(`.radio:eq(${idx})`).addClass('select');
+                    ani = false;
+                });
+
+            });
+            $('.right_arrow').click(function(){
+                if(ani)
+                    return;
+                ani = true;
+                $('.slide_img_container > img:first').animate({
+                    'margin-left':'-1200px'
+                },1000,function(){
+                    $(this).appendTo($('.slide_img_container')).css({
+                        'margin-left':'0px'
+                    });
+                    idx++;
+                    if(idx > 3) idx = 0;
+                    $('.radio').removeClass('select');
+                    $(`.radio:eq(${idx})`).addClass('select');
+                    ani = false;
+                });
+            });
         });
     </script>
 </head>
