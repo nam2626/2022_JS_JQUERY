@@ -64,7 +64,12 @@
             });
             $('.thumnail img').click(function(){
                 $('.main_img').attr('src',$(this).attr('src'));
+                $('.thumnail img').not($(this)).css('opacity','0.5');
+                $(this).css('opacity','1');
             });
+            $('.thumnail img').css('opacity','0.5');
+            $('.thumnail img:first').css('opacity','1');
+
         });
     </script>
 </head>
