@@ -5,6 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .slide_container{
+            width: 1200px;
+            margin:0 auto;
+            overflow: hidden;
+            position: relative;
+            border:1px solid black;
+        }
+        .slide_img_container{
+            width: 4800px;
+            font-size: 0px;
+            position: relative;
+        }
+        .slide_img_container>button{
+            position: absolute;
+            height: 100%;
+            background-color: rgba(255,255,255,0.5);
+            border:none;
+            top:0px;
+        }
+        .left_arrow{
+            left : 0px;
+        }
+        .right_arrow{
+            left: calc(1200px - 64px);
+        }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(function(){
@@ -18,9 +49,9 @@
             <img src="image/main_2.jpg">
             <img src="image/main_3.jpg">
             <img src="image/main_4.jpg">
+            <button class="left_arrow"><img src="image/left_arrow.png"></button>
+            <button class="right_arrow"><img src="image/right_arrow.png"></button>
         </div>
-        <button class="left_arrow"><img src="image/left_arrow.png"></button>
-        <button class="right_arrow"><img src="image/right_arrow.png"></button>
         <div class="slide_nav_bar">
             <ul class="radio_bar">
                 <li class="radio select"></li>
