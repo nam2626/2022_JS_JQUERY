@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var inert_id1 = setInterval(function(){
+                console.log(`1초 마다 실행 - ${new Date().toLocaleString()}`);
+            },1000);
+            var inert_id2 = setInterval(function(){
+                console.log(`5초 마다 실행 - ${new Date().toLocaleString()}`);
+            },5000);
+            var timeout_id3 = setTimeout(() => {
+                console.log(`3초 Timeout 실행 - ${new Date().toLocaleString()}`);
+            }, 3000);
+            console.log(inert_id1,inert_id2,timeout_id3);
+            $('#inter').click(function(){
+                clearInterval(inert_id1);
+                clearInterval(inert_id2);
+            });
+            $('#out').click(function(){
+                clearTimeout(timeout_id3);
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <button id="inter">Interval Stop</button>
+    <button id="out">Timeout Stop</button>
+</body>
+</html>
