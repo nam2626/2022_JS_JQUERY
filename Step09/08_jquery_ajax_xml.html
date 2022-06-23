@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+           var today = new Date();
+           $("#time").html(today.toLocaleString());
+           $("#btn").click(function(){
+                $.ajax({
+                    url : "http://nam2626.dothome.co.kr/ajax_xml.php",
+                    type : 'get',
+                    dataType : 'text',
+                    success : function(r){
+                        console.log(r);
+                        var xmlParser = new DOMParser();
+                        var xmlDoc = xmlParser.parseFromString(r,'text/xml');
+                        print(xmlDoc);
+                        allPrintXml(xmlDoc);
+                    }
+                });
+           }); 
+        });
+        function print(xmlDoc){
+            var question = xmlDoc.getElementsByTagName('question');
+            var answer = xmlDoc.getElementsByTagName('answer');
+            $("#view").html(`문제 : ${question[0].innerHTML}<br> 답 : ${answer[0].innerHTML}<br>${new Date().toLocaleString()}`);
+        }
+        function allPrintXml(xmlDoc){
+            var root = xmlDoc.getElementsByTagName("quiz")[0];
+            console.log("root의 자식 태그 개수: "+root.childNodes.length);
+            for(i=0;i<root.childNodes.length;i++){
+                console.log(root.childNodes[i].nodeName, root.childNodes[i].childNodes.length);
+                if(root.childNodes[i].childNodes == undefined) {
+                    console.log(root.childNodes[i]);
+                    continue;
+                }
+                for(j=0;j<root.childNodes[i].childNodes.length;j++){
+                    console.log("   " + root.childNodes[i].childNodes[j].nodeName
+                    +" : "+root.childNodes[i].childNodes[j].nodeValue
+                    );
+                } 
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="time"></div><!--실제 웹페이지가 로드된 시간-->
+    <button id="btn">버튼</button>
+    <div id="view"></div>  
+</body>
+</html>
