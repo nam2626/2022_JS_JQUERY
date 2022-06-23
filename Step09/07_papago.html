@@ -9,8 +9,9 @@
     <script>
         $(function(){
             $("#btn_translate").click(function(){
-                var queryString = `target=${$('#target').val()}&source=${$('#source').val()}&txt=${$('#txt').val()}`;
-
+                // var queryString = `target=${$('#target').val()}&source=${$('#source').val()}&txt=${$('#txt').val()}`;
+                var queryString = $('form').serialize();
+                console.log($('form').serialize());
                 $.ajax({
                     url : "http://nam2626.dothome.co.kr/papago_2.php",
                     data : queryString,
@@ -77,29 +78,31 @@
 <body>
     <h1>파파고 번역 페이지</h1>
     <section>
-        <article>
-            <select name="source" id="source">
-                <option value="ko">한국어</option>
-                <option value="en">영어</option>
-                <option value="de">독일어</option>
-                <option value="ja">일본어</option>
-                <option value="zh-CN">중국어</option>
-            </select>
-            <h2>번역할 내용</h2>
-            <textarea name="txt" id="txt"></textarea>
-        </article>
-        <article>
-            <select name="target" id="target">
-                <option value="ko">한국어</option>
-                <option value="en">영어</option>
-                <option value="de">독일어</option>
-                <option value="ja">일본어</option>
-                <option value="zh-CN">중국어</option>
-            </select>
-            <h2>번역된 내용</h2>
-            <textarea name="result" id="result" readonly></textarea>
-            <button id='btn_translate'>>></button>
-        </article>
+        <form>
+            <article>
+                <select name="source" id="source">
+                    <option value="ko">한국어</option>
+                    <option value="en">영어</option>
+                    <option value="de">독일어</option>
+                    <option value="ja">일본어</option>
+                    <option value="zh-CN">중국어</option>
+                </select>
+                <h2>번역할 내용</h2>
+                <textarea name="txt" id="txt"></textarea>
+            </article>
+            <article>
+                <select name="target" id="target">
+                    <option value="ko">한국어</option>
+                    <option value="en">영어</option>
+                    <option value="de">독일어</option>
+                    <option value="ja">일본어</option>
+                    <option value="zh-CN">중국어</option>
+                </select>
+                <h2>번역된 내용</h2>
+                <textarea id="result" readonly></textarea>
+                <button id='btn_translate' type="button">>></button>
+            </article>
+        </form>
     </section>
 </body>
 </html>
