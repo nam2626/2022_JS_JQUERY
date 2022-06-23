@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bxSlider</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('.thumnail').bxSlider({
+          slideWidth:80,
+          pager:false,
+          maxSlides:5,
+          minSlides:5,
+          moveSlides:1
+        });
+      });
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .thumnail_container {
+        width: 500px;
+        text-align: center;
+        position: relative;
+        margin: 0 auto;
+      }
+      .main_img {
+        width: 400px;
+        height: 400px;
+      }
+      .bx-wrapper{
+        margin:0 auto;
+        border: none;
+        box-shadow: none;
+      }
+      .thumnail img{
+        width: 80px;
+        height: 80px;
+      }
+      .bx-prev{
+        left: -40px !important;
+      }
+      .bx-next{
+        right: -40px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="thumnail_container">
+      <img src="image/1.jpg" class="main_img" />
+      <div class="thumnail">
+        <div><img src="image/1.jpg" alt="" /></div>
+        <div><img src="image/2.jpg" alt="" /></div>
+        <div><img src="image/3.jpg" alt="" /></div>
+        <div><img src="image/4.jpg" alt="" /></div>
+        <div><img src="image/5.jpg" alt="" /></div>
+        <div><img src="image/6.jpg" alt="" /></div>
+        <div><img src="image/7.jpg" alt="" /></div>
+        <div><img src="image/8.jpg" alt="" /></div>
+        <div><img src="image/9.jpg" alt="" /></div>
+      </div>
+    </div>
+  </body>
+</html>
