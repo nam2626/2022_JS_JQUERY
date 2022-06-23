@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var today = new Date();
+            $("#time").html(today.toLocaleString());
+            $('#btn').click(function(){
+                var queryString = 'txt='+ $('#txt').val();
+                $.ajax({
+                    url : 'http://nam2626.dothome.co.kr/papago.php',
+                    data : queryString,
+                    type : 'get',
+                    dataType : 'json',
+                    success:function(result){
+                        // console.log(result);
+                        // r = JSON.parse(result);
+                        // console.log(r);
+                        // $("#view").html(r.message.result.translatedText);
+                        $("#view").html(result.message.result.translatedText);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="time"></div><!--실제 웹페이지가 로드된 시간-->
+    <textarea id="txt"></textarea><br>
+    <button id="btn">버튼</button>
+    <div id="view"></div>    
+</body>
+</html>
