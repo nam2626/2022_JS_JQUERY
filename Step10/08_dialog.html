@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQueryUI</title>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/jquery-ui.js"></script>
+    <link rel="stylesheet" href="lib/jquery-ui.css" />
+    <link rel="stylesheet" href="lib/jquery-ui.theme.css" />
+    <style></style>
+    <script>
+      $(function () {
+        $("#dialog").dialog();
+        $("#dialog-confirm").dialog({
+          resizable: false,
+          height: "auto",
+          width: 400,
+          modal: true,
+          buttons: {
+            "Delete all items": function () {
+              $(this).dialog("close");
+            },
+            Cancel: function () {
+              $(this).dialog("close");
+            },
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>
+      <a href="https://www.google.com">구글로이동</a> 군인 또는 군무원이 아닌
+      국민은 대한민국의 영역안에서는 중대한 군사상
+      기밀·초병·초소·유독음식물공급·포로·군용물에 관한 죄중 법률이 정한 경우와
+      비상계엄이 선포된 경우를 제외하고는 군사법원의 재판을 받지 아니한다.
+    </p>
+
+    <p>
+      대법원은 법률에 저촉되지 아니하는 범위안에서 소송에 관한 절차, 법원의
+      내부규율과 사무처리에 관한 규칙을 제정할 수 있다. 농업생산성의 제고와
+      농지의 합리적인 이용을 위하거나 불가피한 사정으로 발생하는 농지의 임대차와
+      위탁경영은 법률이 정하는 바에 의하여 인정된다.
+    </p>
+
+    <p>
+      국회의 정기회는 법률이 정하는 바에 의하여 매년 1회 집회되며, 국회의
+      임시회는 대통령 또는 국회재적의원 4분의 1 이상의 요구에 의하여 집회된다.
+      국가는 농업 및 어업을 보호·육성하기 위하여 농·어촌종합개발과 그 지원등
+      필요한 계획을 수립·시행하여야 한다.
+    </p>
+
+    <p>
+      대통령후보자가 1인일 때에는 그 득표수가 선거권자 총수의 3분의 1 이상이
+      아니면 대통령으로 당선될 수 없다. 모든 국민은 그 보호하는 자녀에게 적어도
+      초등교육과 법률이 정하는 교육을 받게 할 의무를 진다.
+    </p>
+
+    <p>
+      국가는 지역간의 균형있는 발전을 위하여 지역경제를 육성할 의무를 진다.
+      비상계엄이 선포된 때에는 법률이 정하는 바에 의하여 영장제도,
+      언론·출판·집회·결사의 자유, 정부나 법원의 권한에 관하여 특별한 조치를 할
+      수 있다.
+    </p>
+
+    <p>
+      헌법개정안은 국회가 의결한 후 30일 이내에 국민투표에 붙여 국회의원선거권자
+      과반수의 투표와 투표자 과반수의 찬성을 얻어야 한다. 모든 국민은 법률이
+      정하는 바에 의하여 납세의 의무를 진다.
+    </p>
+
+    <p>
+      정당의 목적이나 활동이 민주적 기본질서에 위배될 때에는 정부는 헌법재판소에
+      그 해산을 제소할 수 있고, 정당은 헌법재판소의 심판에 의하여 해산된다.
+    </p>
+
+    <div id="dialog" title="Basic dialog">
+      <p>
+        This is the default dialog which is useful for displaying information.
+        The dialog window can be moved, resized and closed with the
+        &apos;x&apos; icon.
+      </p>
+    </div>
+    <div id="dialog-confirm" title="Empty the recycle bin?">
+      <p>
+        <span
+          class="ui-icon ui-icon-alert"
+          style="float: left; margin: 12px 12px 20px 0"
+        ></span
+        >These items will be permanently deleted and cannot be recovered. Are
+        you sure?
+      </p>
+    </div>
+  </body>
+</html>

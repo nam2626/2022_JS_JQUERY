@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQueryUI</title>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/jquery-ui.js"></script>
+    <link rel="stylesheet" href="lib/jquery-ui.css">
+    <link rel="stylesheet" href="lib/jquery-ui.theme.css">
+    <style>
+     
+    </style>
+    <script>
+        $(function(){ 
+            $( "#slider" ).slider({
+                min:10,
+                max:90,
+                step:10,
+                slide:function(e,ui){
+                    $('#custom-handle').text(ui.value);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+ 
+<div id="slider">
+    <div id="custom-handle" class="ui-slider-handle"></div>
+</div>
+ 
+</body>
+</html>
