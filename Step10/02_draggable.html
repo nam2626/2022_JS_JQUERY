@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQueryUI</title>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/jquery-ui.js"></script>
+    <link rel="stylesheet" href="lib/jquery-ui.css">
+    <link rel="stylesheet" href="lib/jquery-ui.theme.css">
+    <style>
+        #draggable { width: 150px; height: 150px; padding: 0.5em; }
+        #box {
+            width: 150px;
+            height: 300px;
+            border:1px solid black;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        $(function(){ 
+            $( "#draggable" ).draggable();
+            $("#box").draggable();
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        안녕하세요
+    </div>
+ 
+    <div id="draggable" class="ui-widget-content">
+    <p>Drag me around</p>
+  </div>
+   
+</body>
+</html>
