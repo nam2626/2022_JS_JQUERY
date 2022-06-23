@@ -8,7 +8,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(function(){
+            $("#btn_translate").click(function(){
+                var queryString = `target=${$('#target').val()}&source=${$('#source').val()}&txt=${$('#txt').val()}`;
 
+                $.ajax({
+                    url : "http://nam2626.dothome.co.kr/papago_2.php",
+                    data : queryString,
+                    type : 'get',
+                    dataType : 'json',
+                    success:function(r){
+                        $("#result").val(r.message.result.translatedText);
+                    }
+                })
+            });
         });
     </script>
     <style>
@@ -40,6 +52,8 @@
             height: 500px;
             resize: none;
             box-sizing: border-box;
+            font-size: 18px;
+            padding:10px;
         }
         h1,h2{
             padding:20px 0px;
