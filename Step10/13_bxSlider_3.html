@@ -18,8 +18,12 @@
           pager:false,
           maxSlides:5,
           minSlides:5,
-          moveSlides:1
+          moveSlides:1,
+          touchEnabled:false
         });
+        $('.thumnail img').click(function(){
+          $('.main_img').attr('src',$(this).attr('src'));
+        })
       });
     </script>
     <style>
