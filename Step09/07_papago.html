@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+
+        });
+    </script>
+</head>
+<body>
+    <h1>파파고 번역 페이지</h1>
+    <section>
+        <article>
+            <select name="source" id="source">
+                <option value="ko">한국어</option>
+                <option value="en">영어</option>
+                <option value="de">독일어</option>
+                <option value="ja">일본어</option>
+                <option value="zh-CN">중국어</option>
+            </select>
+            <h2>번역할 내용</h2>
+            <textarea name="txt" id="txt"></textarea>
+        </article>
+        <article>
+            <select name="target" id="target">
+                <option value="ko">한국어</option>
+                <option value="en">영어</option>
+                <option value="de">독일어</option>
+                <option value="ja">일본어</option>
+                <option value="zh-CN">중국어</option>
+            </select>
+            <h2>번역된 내용</h2>
+            <textarea name="result" id="result" readonly></textarea>
+            <button id='btn_translate'>>></button>
+        </article>
+    </section>
+</body>
+</html>
