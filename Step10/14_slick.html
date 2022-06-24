@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="lib/slick.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="lib/slick.js"></script>
+    <script>
+        $(function(){
+            $('.slick_container').slick({
+                nextArrow : `<button><img src="image/right_arrow.png" alt=""></button>`
+            });
+        });
+    </script>
+    <style>
+        .container{
+            width: 1200px;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="slick_container">
+            <div><img src="image/main_1.jpg" alt=""></div>
+            <div><img src="image/main_2.jpg" alt=""></div>
+            <div><img src="image/main_3.jpg" alt=""></div>
+            <div><img src="image/main_4.jpg" alt=""></div>
+        </div>
+    </div>
+</body>
+</html>
