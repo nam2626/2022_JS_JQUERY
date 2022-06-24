@@ -17,6 +17,16 @@
                     dataType:'json',
                     success:function(r){
                         console.log(JSON.stringify(r));
+                        //도시명 - name
+                        $('#result').append(`<p>도시명 : ${r.name}</p>`);
+                        //현재온도 - main.temp
+                        $('#result').append(`<p>현재온도 : ${(r.main.temp-273.15).toFixed(2)}℃</p>`);
+                        //최고온도 - main.temp_max
+                        $('#result').append(`<p>최고온도 : ${(r.main.temp_max-273.15).toFixed(2)}℃</p>`);
+                        //최저온도 - main.temp_min
+                        $('#result').append(`<p>최저온도 : ${(r.main.temp_min-273.15).toFixed(2)}℃</p>`);
+                        //바람세기 - wind.speed
+                        $('#result').append(`<p>바람세기 : ${r.wind.speed}m/sec</p>`);
                     }
                 });
             });
