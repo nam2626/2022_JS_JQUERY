@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery</title>
     <link rel="stylesheet" href="lib/slick.css">
+    <link rel="stylesheet" href="lib/slick-theme.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="lib/slick.js"></script>
     <script>
         $(function(){
             $('.slick_container').slick({
+                prevArrow : $('.slick-prev'),
                 nextArrow : `<button><img src="image/right_arrow.png" alt=""></button>`
+            });
+            $('.slick_container2').slick({
+                dots:true,
+                slidesToShow: 3,
+                slidesToScroll: 3
             });
         });
     </script>
@@ -24,8 +31,16 @@
 </head>
 <body>
     <div class="container">
-        
+        <button class="slick-prev"><img src="image/left_arrow.png" alt=""></button>
         <div class="slick_container">
+            <div><img src="image/main_1.jpg" alt=""></div>
+            <div><img src="image/main_2.jpg" alt=""></div>
+            <div><img src="image/main_3.jpg" alt=""></div>
+            <div><img src="image/main_4.jpg" alt=""></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="slick_container2">
             <div><img src="image/main_1.jpg" alt=""></div>
             <div><img src="image/main_2.jpg" alt=""></div>
             <div><img src="image/main_3.jpg" alt=""></div>
