@@ -19,6 +19,8 @@
                         console.log(JSON.stringify(r));
                         //도시명 - name
                         $('#result').append(`<p>도시명 : ${r.name}</p>`);
+                        //현재 날씨 - weather[0].main
+                        $('#result').append(`<p>현재날씨 : ${r.weather[0].main}</p>`);
                         //현재온도 - main.temp
                         $('#result').append(`<p>현재온도 : ${(r.main.temp-273.15).toFixed(2)}℃</p>`);
                         //최고온도 - main.temp_max
